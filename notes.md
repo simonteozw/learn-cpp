@@ -42,3 +42,8 @@
 - `noexcept` means that a function cannot possibly throw an exception
 - `bool is_odd(int x) noexcept { return 1 == x % 2; }`
 - as a general rule, treat destructors as if they were noexcept
+
+## Runtime polymorphism
+- private members are not inherited by derived class
+- use the `virtual` keyword to permit a derived class to override a base class’s methods
+- achieve interface inheritance through deriving from base classes that contain only pure­virtual methods
