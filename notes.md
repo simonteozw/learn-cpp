@@ -32,6 +32,11 @@
 - dynamic objects (aka allocated objects) are allocated an deallocated on request (using `new` keyword)
 - `int* my_int_ptr = new int{ 42 };`
 - `delete my_int_ptr`
+- lvalue = value that has a name
+- rvalue = value that is not an lvalue
+- rvalue references are a C++11 extension
+- cast an lvalue reference to an rvalue reference using the std::move function from the <utility> header
+- move constructors look like copy constructors except they take rvalue refer- ences instead of lvalue references
 
 ## Exceptions:
 - `noexcept` means that a function cannot possibly throw an exception
