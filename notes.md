@@ -37,6 +37,7 @@
 - rvalue references are a C++11 extension
 - cast an lvalue reference to an rvalue reference using the std::move function from the <utility> header
 - move constructors look like copy constructors except they take rvalue refer- ences instead of lvalue references
+- std::move calls the move constructor of an object
 
 ## Exceptions:
 - `noexcept` means that a function cannot possibly throw an exception
@@ -47,3 +48,8 @@
 - private members are not inherited by derived class
 - use the `virtual` keyword to permit a derived class to override a base class’s methods
 - achieve interface inheritance through deriving from base classes that contain only pure­virtual methods
+
+## Templates
+- declare tem- plate parameters using either the typename or class keywords followed by an identifier
+- template<typename T> declares that the template takes a template parameter T
+- c++ suppoorts template type detection
