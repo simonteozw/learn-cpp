@@ -56,3 +56,8 @@
 
 ## Type Aliasing
 - `using type-alias = type-id;`
+
+## Const Expressions
+- aka `constexpr`
+- evaluated at compile time
+- code blocks that correspond to true conditions get emitted, and the rest is ignored
