@@ -53,3 +53,6 @@
 - declare tem- plate parameters using either the typename or class keywords followed by an identifier
 - template<typename T> declares that the template takes a template parameter T
 - c++ suppoorts template type detection
+
+## Type Aliasing
+- `using type-alias = type-id;`
