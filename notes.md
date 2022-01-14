@@ -61,3 +61,14 @@
 - aka `constexpr`
 - evaluated at compile time
 - code blocks that correspond to true conditions get emitted, and the rest is ignored
+
+## Variadic Functions
+- declare variadic functions by placing `...` as the final parameter in the function’s argument list
+- when a variadic function is invoked, the compiler matches arguments against declared arguments
+- any leftovers pack into the variadic arguments represented by the `...` argument
+
+## Function Pointers
+- `using alias-name = return-type(*)(arg-type1, arg-type2, ...)`
+- `using operation_func = float(*)(float, int);`
+
+
