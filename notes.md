@@ -71,4 +71,10 @@
 - `using alias-name = return-type(*)(arg-type1, arg-type2, ...)`
 - `using operation_func = float(*)(float, int);`
 
-
+## Lambda Expressions
+- `[captures] (parameters) modifiers -> return-type { body }`
+- captures: member variables of the function object (that is, the partially applied parameters)
+- parameters: arguments required to invoke the function object
+- body: function object's code
+- specifiers: elements like `constexpr, mutable, noexcept`, and `[[noreturn]]`
+- return type: type returned by the function object
