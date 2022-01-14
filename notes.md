@@ -78,3 +78,9 @@
 - body: function object's code
 - specifiers: elements like `constexpr, mutable, noexcept`, and `[[noreturn]]`
 - return type: type returned by the function object
+
+## Testing
+- unit test: focused, cohesive collection of code—a unit, such as a function or a class—behaves exactly as the programmer intended
+- integration test: testing a collection of units together
+- acceptance test: ensure that your software meets all of your customers’ requirements
+- performance test: evaluate whether software meets effectiveness requirements, such as speed of execution or memory/power consumption
