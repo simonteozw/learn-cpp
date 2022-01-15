@@ -100,3 +100,9 @@
 - transferable, non-exclusive ownership over a single dynamic object
 - can move shared pointers, which makes them transfer- able
 - can copy them, which makes their ownership non-exclusive
+
+## Weak Pointers
+- special kind of smart pointer that has no ownership over the object to which it refers
+- allow you to track an object and to convert the weak pointer into a shared pointer only if the tracked object still exists
+- generate temporary ownership over an object
+- movable and copyable
