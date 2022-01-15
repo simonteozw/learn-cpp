@@ -1,10 +1,10 @@
-## Access controls:
+## Access controls
 - public: anyone can access
 - private: only class can access its private attributes
 - using class instead of struct declares members as private by default
 - aside from default access control, classes declared with the struct and class keywords are the same
 
-## Pointers:
+## Pointers
 - deference pointer (*) is a unary operator that accesses the object to which a pointer refers
 - member-of-pointer performs 2 simultaneous operations: dereferences a pointer, accesses a member of a pointed-to object
 - void pointers are used when pointed-to type is irrelevant
@@ -12,7 +12,7 @@
 - use std::byte pointer for interacting with raw memory at byte level
 - any value that is not nullptr converts implicitly to true, whereas nullptr converts implicitly to false
 
-## Object Life Cycle:
+## Object Life Cycle
 - reserve storage for objects in a process called allocation
 - release the object’s storage in a process called deallocation
 - storage duration begins when the object is allocated and ends when the object is deallocated
@@ -39,7 +39,7 @@
 - move constructors look like copy constructors except they take rvalue refer- ences instead of lvalue references
 - std::move calls the move constructor of an object
 
-## Exceptions:
+## Exceptions
 - `noexcept` means that a function cannot possibly throw an exception
 - `bool is_odd(int x) noexcept { return 1 == x % 2; }`
 - as a general rule, treat destructors as if they were noexcept
@@ -84,3 +84,9 @@
 - integration test: testing a collection of units together
 - acceptance test: ensure that your software meets all of your customers’ requirements
 - performance test: evaluate whether software meets effectiveness requirements, such as speed of execution or memory/power consumption
+
+## Scoped Pointers
+- expresses non-transferable, exclusive ownership over a single dynamic object
+- non-transferable means that the scoped pointers cannot be moved from one scope to another
+- exclusive ownership means that they can’t be copied, so no other smart pointers can have ownership of a scoped pointer’s dynamic object
+- boost::scoped_ptr<PointedToType> my_ptr{ new PointedToType };
