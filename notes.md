@@ -95,3 +95,8 @@
 - transferable, exclusive ownership over a single dynamic object
 - can move unique pointers, which makes them transferable
 - exclusive ownership, cannot be copied
+
+## Shared Pointers
+- transferable, non-exclusive ownership over a single dynamic object
+- can move shared pointers, which makes them transfer- able
+- can copy them, which makes their ownership non-exclusive
