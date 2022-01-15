@@ -89,4 +89,9 @@
 - expresses non-transferable, exclusive ownership over a single dynamic object
 - non-transferable means that the scoped pointers cannot be moved from one scope to another
 - exclusive ownership means that they can’t be copied, so no other smart pointers can have ownership of a scoped pointer’s dynamic object
-- boost::scoped_ptr<PointedToType> my_ptr{ new PointedToType };
+- `boost::scoped_ptr<PointedToType> my_ptr{ new PointedToType };`
+
+## Unique Pointers
+- transferable, exclusive ownership over a single dynamic object
+- can move unique pointers, which makes them transferable
+- exclusive ownership, cannot be copied
