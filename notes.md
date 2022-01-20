@@ -106,3 +106,12 @@
 - allow you to track an object and to convert the weak pointer into a shared pointer only if the tracked object still exists
 - generate temporary ownership over an object
 - movable and copyable
+
+## File Systems
+- inode: database that describes the file/directory attributes such as metadata and the physical location on the hard drive
+
+![dvsd](/src/img/file-link.png)
+
+- inode: essentially the numerical equivalent of a full address
+- hard link: directory entry that assigns a name to an existing file
+- symbolic link: assigns a name to a path (which might or might not exist)
