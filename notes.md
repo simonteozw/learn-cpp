@@ -136,7 +136,7 @@ systems, sometimes threads can wake up spuriously
 - important to verify that a condition variable was in fact signaled once a waiting thread awakens
 - `cv.notify_one()`: if any threads are waiting on cv, this operation notifies one of them
 - `cv.notify_all()`: if any threads are waiting on cv, this operation notifies all of them
-- `cv.wait(lock, [pred])`: given a lock on the mutex owned by the noti- fier, returns when awakened. If supplied, pred determines whether the notification is spurious (returns false) or real (returns true)
+- `cv.wait(lock, [pred])`: given a lock on the mutex owned by the notifier, returns when awakened. If supplied, pred determines whether the notification is spurious (returns false) or real (returns true)
 - `cv.wait(lock, [pred])`: execution of the current thread (which shall have locked lock's mutex) is blocked until notified
 - `cv.wait(lock, [pred])`: at the moment of blocking the thread, the function automatically calls lock.unlock(), allowing other locked threads to continue
 - `cv.wait(lock, [pred])`: once notified (explicitly, by some other thread), the function unblocks and calls lock.lock(), leaving lock in the same state as when the function was called. Then the function returns (notice that this last mutex locking may block again the thread before returning)
