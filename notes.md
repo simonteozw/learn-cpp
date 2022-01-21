@@ -115,3 +115,7 @@
 - inode: essentially the numerical equivalent of a full address
 - hard link: directory entry that assigns a name to an existing file
 - symbolic link: assigns a name to a path (which might or might not exist)
+
+## Concurrency and Parallelism
+- concurrency: 2 or more tasks running in a given time period
+- parallelism: 2 or more tasks running at the same instant
