@@ -140,3 +140,10 @@ systems, sometimes threads can wake up spuriously
 - `cv.wait(lock, [pred])`: execution of the current thread (which shall have locked lock's mutex) is blocked until notified
 - `cv.wait(lock, [pred])`: at the moment of blocking the thread, the function automatically calls lock.unlock(), allowing other locked threads to continue
 - `cv.wait(lock, [pred])`: once notified (explicitly, by some other thread), the function unblocks and calls lock.lock(), leaving lock in the same state as when the function was called. Then the function returns (notice that this last mutex locking may block again the thread before returning)
+
+## Buffers
+- buffer (or data buffer) is memory that stores transient data
+- boost Asio buffer classes form the interface for all I/O operations
+- `boost::asio::const_buffer`: holds a buffer that cannot be modified once you’ve constructed it
+- `boost::asio::mutable_buffer`: holds a buffer that can be modified after construction
+- `boost::asio::streambuf`: holds an automatically resizable buffer based on std::streambuf
