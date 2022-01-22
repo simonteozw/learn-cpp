@@ -147,3 +147,11 @@ systems, sometimes threads can wake up spuriously
 - `boost::asio::const_buffer`: holds a buffer that cannot be modified once you’ve constructed it
 - `boost::asio::mutable_buffer`: holds a buffer that can be modified after construction
 - `boost::asio::streambuf`: holds an automatically resizable buffer based on std::streambuf
+
+## OS Signals
+- `SIGTERM`: termination request
+- `SIGSEV`: invalid memory access
+- `SIGINT`: external interrupt, such as a keyboard interrupt
+- `SIGILL`: invalid program image
+- `SIGABRT`: abnormal termination condition, such as `std::abort`
+- `SIGFPE`: floating-point error, such as division by 0
