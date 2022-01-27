@@ -2,26 +2,26 @@
 #include <future>
 #include <mutex>
 #include <condition_variable>
-#include <semaphore.h>
+#include <boost/interprocess/sync/interprocess_semaphore.hpp>
 #include <iostream>
 #include <vector>
 
 void barrier(int n) {
     std::vector<std::future<void> > threads;
     int count = 0, temp;
-    std::mutex lock, barrier; // should be using counting_semaphore but c++20 is giving many problems
-    barrier.lock();
+    std::mutex lock;
+    boost::interprocess::interprocess_semaphore barrier(0);
 
     auto fn = [&] {
         printf("Rendezvous\n");
         lock.lock();
         count++;
 
-        if (count == n) barrier.unlock();
+        if (count == n) barrier.post();
         lock.unlock();
 
-        barrier.lock();
-        barrier.unlock();
+        barrier.wait();
+        barrier.post();
         printf("In critical point\n");
     };
 
