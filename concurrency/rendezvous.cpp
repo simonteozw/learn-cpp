@@ -19,7 +19,7 @@ void rendezvous() {
         B1Done.unlock();
     });
 
-    auto threadB = std::async(std::launch::async, [&] {
+    std::future<void> threadB = std::async(std::launch::async, [&] {
         printf("Statement B1\n");
         B1Done.unlock();
 
