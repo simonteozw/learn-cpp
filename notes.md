@@ -155,3 +155,19 @@ systems, sometimes threads can wake up spuriously
 - `SIGILL`: invalid program image
 - `SIGABRT`: abnormal termination condition, such as `std::abort`
 - `SIGFPE`: floating-point error, such as division by 0
+
+## Condition Variables
+- 2 threads A and B
+- need A to finish before B can work
+- use `mutex done_lock`, `bool is_done`, and `cond_t done_cond`
+- thread A:
+    1. lock `done_lock`
+    2. `is_done` = true
+    3. cond_signal `done_cond` --> signal anyone waiting on this condition variable
+    4. unlock `done_lock`
+
+- thread B:c
+    1. lok `done_lock`
+    2. if `!is_done`: unlock `done_lock` then cond_wait `done_cond` --> blocks until cond signal received
+    3. acquire and lock `done_lock` --> side effect of member function cond_wait
+    4. unlock `done_lock`
