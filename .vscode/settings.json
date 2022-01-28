@@ -87,6 +87,13 @@
         "set": "cpp",
         "shared_mutex": "cpp",
         "stack": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "*.ipp": "cpp",
+        "any": "cpp",
+        "csignal": "cpp",
+        "coroutine": "cpp",
+        "list": "cpp",
+        "typeindex": "cpp",
+        "source_location": "cpp"
     }
 }
