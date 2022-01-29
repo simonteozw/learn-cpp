@@ -94,6 +94,7 @@
         "coroutine": "cpp",
         "list": "cpp",
         "typeindex": "cpp",
-        "source_location": "cpp"
+        "source_location": "cpp",
+        "__functional_03": "cpp"
     }
 }
