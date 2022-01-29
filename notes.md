@@ -186,5 +186,11 @@ systems, sometimes threads can wake up spuriously
 ## Starvation
 - when 1 thread cannot make progress because it is constantly waiting for other threads
 
+## No Starve Mutex
+1. if there is only one thread that is ready to run, the scheduler has to let it run
+2. if a thread is ready to run, then the time it waits until it runs is bounded
+3. if there are threads waiting on a semaphore when a thread executes signal, then one of the waiting threads has to be woken
+4. if a thread is waiting at a semaphore, then the number of threads that will be woken before it is bounded
+
 ## Common Synchronization Errors
 - any time you wait for a semaphore while holding a mutex, there is a danger of deadlock
