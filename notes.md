@@ -175,5 +175,16 @@ systems, sometimes threads can wake up spuriously
 - while an item is being added to or removed from the buffer, the buffer is in an inconsistent state. Therefore, threads must have exclusive access to the buffer
 - if a consumer thread arrives while the buffer is empty, it blocks until a producer adds a new item
 
+## Reader Writer
+- any number of readers can be in the critical section simultaneously
+- writers must have exclusive access to the critical section
+- a writer cannot enter the critical section while any other thread (reader or writer) is there, and while the writer is there, no other thread may enter
+- known as categorical mutual exclusion
+- thread in the critical section does not necessarily exclude other threads, but the presence of one category in the critical section excludes other categories
+- common solution uses LightSwitch pattern
+
+## Starvation
+- when 1 thread cannot make progress because it is constantly waiting for other threads
+
 ## Common Synchronization Errors
 - any time you wait for a semaphore while holding a mutex, there is a danger of deadlock
