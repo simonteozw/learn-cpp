@@ -165,9 +165,15 @@ systems, sometimes threads can wake up spuriously
     2. `is_done` = true
     3. cond_signal `done_cond` --> signal anyone waiting on this condition variable
     4. unlock `done_lock`
-
 - thread B:c
     1. lok `done_lock`
     2. if `!is_done`: unlock `done_lock` then cond_wait `done_cond` --> blocks until cond signal received
     3. acquire and lock `done_lock` --> side effect of member function cond_wait
     4. unlock `done_lock`
+
+## Producer Consumer
+- while an item is being added to or removed from the buffer, the buffer is in an inconsistent state. Therefore, threads must have exclusive access to the buffer
+- if a consumer thread arrives while the buffer is empty, it blocks until a producer adds a new item
+
+## Common Synchronization Errors
+- any time you wait for a semaphore while holding a mutex, there is a danger of deadlock
