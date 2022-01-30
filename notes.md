@@ -192,5 +192,28 @@ systems, sometimes threads can wake up spuriously
 3. if there are threads waiting on a semaphore when a thread executes signal, then one of the waiting threads has to be woken
 4. if a thread is waiting at a semaphore, then the number of threads that will be woken before it is bounded
 
+## Dining Philosophers
+- 3 possible solutions
+1. If there are `n` chopsticks, limit to only have `n - 1` philosophers
+2. `n - 1` philosophers pick up left chopstick first, `1` philosopher picks up right chopstick first
+    - **Proof by Contradiction**
+    - if deadlock is possible, it occurs when all 5 philosophers are holding one fork and waiting for the other
+    - if we assume that Philosopher j is a leftie, then she must be holding her left fork and waiting for her right
+    - her neighbor to the right, Philosopher k, must be holding his left fork and waiting for his right neighbor
+    - in other words, Philosopher k must be a leftie
+    - repeating the same argument, we can prove that the philosophers are all lefties, which contradicts the original claim that there is at least one rightie
+    - deadlock is not possible
+3. Tanenbaum's solution
+    - philosopher is either thinking, eating, or hungry
+    - check if you are hungry, and both neighbours are not eating, then eat
+    - when return chopsticks check both neighbours again
+    - prone to starvation
+    - we are trying to starve Philosopher 0
+    - initially, 2 and 4 are at the table and 1 and 3 are hungry
+    - 2 gets up and 1 sit downs
+    - 4 gets up and 3 sits down
+    - we are in the mirror image of the starting position
+    - could repeat the cycle indefinitely and Philosopher 0 would starve
+
 ## Common Synchronization Errors
 - any time you wait for a semaphore while holding a mutex, there is a danger of deadlock
