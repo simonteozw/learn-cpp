@@ -2,7 +2,10 @@
 *
 
 # Unignore all with extensions
-!*.*
+!*.cpp
+!*.h
+!*.hh
+!*.md
 
 # Unignore all dirs
 !*/
